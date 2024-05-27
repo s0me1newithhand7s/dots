@@ -1,0 +1,91 @@
+{
+    "layer": "top",
+    "position": "left",
+
+    "modules-left": ["custom/sep-top", "custom/logo", "custom/sep-mid", "hyprland/workspaces", "custom/sep-mid", "custom/player", "custom/sep-bot"],
+    "modules-center": ["custom/sep-top", "clock", "custom/sep-bot"],
+    "modules-right": ["custom/sep-top", "hyprland/language", "custom/sep-mid", "pulseaudio", "custom/sep-mid", "tray", "custom/sep-bot"],
+
+    
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "〡",
+            "2": "〢",
+            "3": "〣",
+            "4": "〤",
+            "5": "〥",
+            "6": "〦",
+            "7": "〧",
+            "8": "〨",
+            "9": "〩",
+            "10": "〸",
+            "urgent": "〒"
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate"
+
+    },
+
+    "hyprland/language": {
+        "format": {},
+        "format-ru": "RU",
+        "format-en": "EN"
+    },
+
+
+    "clock": {
+        "format": "{:%H ╏ %M}",
+        "rotate": 90,
+        "tooltip": "true",
+		"on-click": "foot -F nix run nixpkgs#tty-clock -- -sbcrC 1"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "on-click": "pwvucontrol"
+    },
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+
+    "custom/sep-top": {
+        "format": "╭─╴╶─╮",
+        "tooltip": false
+    },
+
+    "custom/sep-mid": {
+        "format": "├─╴╶─┤",
+        "tooltip": false
+    },
+
+    "custom/sep-bot": {
+        "format": "╰─╴╶─╯",
+        "tooltip": false
+    },
+
+    "custom/player": {
+        "format": "{icon}",
+        "format-icons": {
+            "Paused": "⏸",
+            "Playing": "⏵"
+        },
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "nix run nixpkgs#playerctl -- play-pause",
+        "on-click-right": "nix run nixpkgs#playerctl -- stop",
+        "smooth-scrolling-threshold": 3,
+        "on-scroll-up": "nix run nixpkgs#playerctl -- next",
+        "on-scroll-down": "nix run nixpkgs#playerctl -- previous",
+        "exec": "nix run nixpkgs#playerctl -- -a metadata --format '{\"text\": \" \", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    },
+
+    "custom/logo": {
+        "format": "     ",
+        "tooltip": false
+    }
+}
