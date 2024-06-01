@@ -33,7 +33,7 @@ window#waybar {
 }
 
 #custom-logo {
-    background-image: url("$USER/Downloads/nixicon.png");
+    background-image: url("$HOME/Downloads/nixicon.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain; 
