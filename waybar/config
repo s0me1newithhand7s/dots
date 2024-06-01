@@ -86,6 +86,7 @@
 
     "custom/logo": {
         "format": "     ",
-        "tooltip": false
+        "tooltip": false,
+	"on-click": "xdg-open https://nixos.org"
     }
 }
