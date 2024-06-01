@@ -28,19 +28,20 @@
 
     },
 
-    "hyprland/language": {
+  "hyprland/language": {
         "format": {},
-        "format-ru": "RU",
-        "format-en": "EN"
+        "format-ru": "🇷🇺",
+        "format-en": "🇺🇸",
+        "on-click": "hyprctl switchxkblayout usb-usb-keyboard next"
     },
 
 
     "clock": {
-        "format": "{:%H ╏ %M}",
+        "format": "{:%H ╎ %M}",
         "rotate": 90,
         "tooltip": "true",
 		"on-click": "foot -F nix run nixpkgs#tty-clock -- -sbcrC 1"
-    },
+    }
 
     "pulseaudio": {
         "format": "{volume}%",
