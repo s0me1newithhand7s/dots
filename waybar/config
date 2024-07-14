@@ -28,24 +28,24 @@
 
     },
 
-  "hyprland/language": {
+    "hyprland/language": {
         "format": {},
         "format-ru": "🇷🇺",
         "format-en": "🇺🇸",
         "on-click": "hyprctl switchxkblayout usb-usb-keyboard next"
     },
 
-
     "clock": {
         "format": "{:%H ╎ %M}",
         "rotate": 90,
         "tooltip": "true",
+        "tooltip-format": "<big>{:%Y %B \t   week: %V }</big>\n<tt>{calendar}</tt>",
 		"on-click": "foot -F nix run nixpkgs#tty-clock -- -sbcrC 1"
-    }
+    },
 
     "pulseaudio": {
         "format": "{volume}%",
-        "on-click": "pwvucontrol"
+        "on-click": "nix run nixpkgs#pwvucontrol"
     },
 
     "tray": {
@@ -79,7 +79,7 @@
         "max-length": 40,
         "on-click": "nix run nixpkgs#playerctl -- play-pause",
         "on-click-right": "nix run nixpkgs#playerctl -- stop",
-        "smooth-scrolling-threshold": 3,
+        "smooth-scrolling-threshold": 1,
         "on-scroll-up": "nix run nixpkgs#playerctl -- next",
         "on-scroll-down": "nix run nixpkgs#playerctl -- previous",
         "exec": "nix run nixpkgs#playerctl -- -a metadata --format '{\"text\": \" \", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -87,7 +87,7 @@
 
     "custom/logo": {
         "format": "     ",
-        "tooltip": false,
-	"on-click": "xdg-open https://nixos.org"
+        "tooltip": true,
+        "tooltip-format": " ~ 𝑠𝑛𝑜𝑤𝑦 𝑝𝑙𝑎𝑐𝑒, 𝑓𝑢𝑙𝑙 𝑜𝑓 𝑓𝑙𝑎𝑘𝑒𝑠! ❄️"
     }
 }

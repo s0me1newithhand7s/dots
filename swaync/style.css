@@ -1,0 +1,13 @@
+.notification-row {
+    outline: none;
+    background: rgba(38, 3, 4, 0.75);
+    border: 2px solid rgba(166, 27, 38, 0.7);
+    border-radius: 10px;
+}
+
+.control-center {
+    outline: none;
+    background: rgba(38, 3, 4, 0.75);
+    border: 2px solid rgba(166, 27, 38, 0.7);
+    border-radius: 10px;
+}
