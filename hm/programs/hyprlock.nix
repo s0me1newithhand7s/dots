@@ -12,7 +12,8 @@
                     ignore_empty_input = true;
                 };
 
-                background = {
+                background = [
+                {
                     monitor = "$mon1";
                     path = "wallhaven-7po5yv.jpg";
                     color = "rgba(166, 27, 38, 0.65)";
@@ -20,9 +21,11 @@
                     blur_size = 5;
                     contrast = 0.9;
                     brightness = 0.75;
-                };
+                }
+                ];
 
-                image = {
+                image = [
+                {
                     monitor = "$mon1";
                     path = "nixicon.png";
                     size = 50;
@@ -41,9 +44,11 @@
                     shadow_size	= 5;
                     shadow_color = "rgba(0, 0, 0, 0.5)";
                     shadow_boost = 1;
-                };
+                }
+                ];
 
-                label = {
+                label = [
+                {
                     monitor = "$mon1";
                     text = "$TIME";
                     text_align = "center";
@@ -60,7 +65,7 @@
                     shadow_size	= 2;
                     shadow_color = "rgba(38, 3, 4, 1)";
                     shadow_boost = 2;
-                };
+                }
 
                 label = {
                     monitor = "$mon1";
@@ -79,7 +84,7 @@
                     shadow_size	= 2;
                     shadow_color = "rgba(38, 3, 4, 1)";
                     shadow_boost = 2;
-                };
+                }
 
                 label = {
                     monitor = "$mon1";
@@ -98,7 +103,8 @@
                     shadow_size	= 2;
                     shadow_color = "rgba(38, 3, 4, 1)";
                     shadow_boost = 2;
-                };
+                }
+                ];
 
                 input-field = {
                     monitor = "$mon1";
