@@ -54,10 +54,11 @@
                         passes = "5";
                         popups = false;
                         special = false;
-                         xray = true
+                        xray = true
                     };
 
-                    animations = {
+                    animations = [
+                    {
                         enabled = true;
 
                         bezier = "bez, 0.05, 0.9, 0.1, 1.05";
@@ -67,7 +68,8 @@
                         animation = "borderangle, 1, 8, default";
                         animation = "fade, 1, 7, default";
                         animation = "workspaces, 1, 6, default";
-                    };
+                    }
+                    ];
 
                     misc = {
                         disable_hyprland_logo = true;
