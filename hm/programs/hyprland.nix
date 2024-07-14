@@ -72,8 +72,8 @@
                     misc = {
                         disable_hyprland_logo = true;
                         disable_splash_rendering = true;
-                        font_family = "Hack";.
-                        middle_click_paste = falsel
+                        font_family = "Hack";
+                        middle_click_paste = false;
                     };
                 };
                 extraConfig = ''
