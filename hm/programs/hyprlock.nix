@@ -14,7 +14,7 @@
 
                 background = [
                 {
-                    monitor = "$mon1";
+                    monitor = "";
                     path = "wallhaven-7po5yv.jpg";
                     color = "rgba(166, 27, 38, 0.65)";
                     blur_passes = 1;
@@ -26,7 +26,7 @@
 
                 image = [
                 {
-                    monitor = "$mon1";
+                    monitor = "";
                     path = "nixicon.png";
                     size = 50;
                     rounding = 0;
@@ -49,7 +49,7 @@
 
                 label = [
                 {
-                    monitor = "$mon1";
+                    monitor = "";
                     text = "$TIME";
                     text_align = "center";
                     color = "rgba(229, 120, 117, 1)";
@@ -68,7 +68,7 @@
                 }
 
                 label = {
-                    monitor = "$mon1";
+                    monitor = "";
                     text = "<b>Welcome back, $USER.</b>";
                     text_align = "center";
                     color = "rgba(229, 120, 117, 1)";
@@ -87,7 +87,7 @@
                 }
 
                 label = {
-                    monitor = "$mon1";
+                    monitor = "";
                     text = "> $LAYOUT[en,ru]";
                     text_align = "center";
                     color = "rgba(229, 120, 117, 1)";
@@ -106,8 +106,9 @@
                 }
                 ];
 
-                input-field = {
-                    monitor = "$mon1";
+                input-field = [
+                {
+                    monitor = "";
                     size = "200, 40";
                     outline_thickness = 2;
                     dots_size = 0.35;
@@ -140,11 +141,9 @@
                     shadow_size	= 5;
                     shadow_color = "rgba(0, 0, 0, 0.5)";
                     shadow_boost = 1;
-                };
+                }
+                ];  
             };
-            extraConfig = ''
-                $mon1 = DP-1
-            '';
         };
     };
 }
