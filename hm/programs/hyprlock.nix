@@ -66,8 +66,7 @@
                     shadow_color = "rgba(38, 3, 4, 1)";
                     shadow_boost = 2;
                 }
-
-                label = {
+                {
                     monitor = "";
                     text = "<b>Welcome back, $USER.</b>";
                     text_align = "center";
@@ -85,8 +84,7 @@
                     shadow_color = "rgba(38, 3, 4, 1)";
                     shadow_boost = 2;
                 }
-
-                label = {
+                {
                     monitor = "";
                     text = "> $LAYOUT[en,ru]";
                     text_align = "center";
