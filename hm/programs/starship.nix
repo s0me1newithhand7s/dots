@@ -16,6 +16,8 @@
                     [╰─>](bold blue)
                 '';
 
+                right_format = ''$cmd_duration ❲$character❳ at ❗$time'';
+
                 os = {
                     format = "on [($name $codename$version$edition $symbol )]($style)";
                     style = "bold blue";
