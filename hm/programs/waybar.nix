@@ -11,9 +11,29 @@
                     layer = "top";
                     position = "left";
 
-                    modules-left = [ "custom/sep-top", "custom/logo", "custom/sep-mid", "hyprland/workspaces", "custom/sep-mid", "custom/player", "custom/sep-bot" ];
-                    modules-center = [ "custom/sep-top", "clock", "custom/sep-bot" ];
-                    modules-right = [ "custom/sep-top", "hyprland/language", "custom/sep-mid", "pulseaudio", "custom/sep-mid", "tray", "custom/sep-bot" ];
+                    modules-left = [ 
+                        "custom/sep-top" 
+                        "custom/logo" 
+                        "custom/sep-mid" 
+                        "hyprland/workspaces" 
+                        "custom/sep-mid" 
+                        "custom/player" 
+                        "custom/sep-bot" 
+                    ];
+                    modules-center = [ 
+                        "custom/sep-top" 
+                        "clock" 
+                        "custom/sep-bot" 
+                    ];
+                    modules-right = [ 
+                        "custom/sep-top" 
+                        "hyprland/language" 
+                        "custom/sep-mid" 
+                        "pulseaudio" 
+                        "custom/sep-mid" 
+                        "tray" 
+                        "custom/sep-bot" 
+                    ];
 
                     "hyprland/workspaces" = {
                         format = "{icon}";
