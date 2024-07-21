@@ -62,12 +62,12 @@
                         enabled = true;
 
                         bezier = "bez, 0.05, 0.9, 0.1, 1.05";
-                        animation = "windows, 1, 7, bez";
-                        animation = "windowsOut, 1, 7, default, popin 80%";
-                        animation = "border, 1, 10, default";
-                        animation = "borderangle, 1, 8, default";
-                        animation = "fade, 1, 7, default";
-                        animation = "workspaces, 1, 6, default";
+                        anima1 = "windows, 1, 7, bez";
+                        anima2 = "windowsOut, 1, 7, default, popin 80%";
+                        anima3 = "border, 1, 10, default";
+                        anima4 = "borderangle, 1, 8, default";
+                        anima5 = "fade, 1, 7, default";
+                        animat6 = "workspaces, 1, 6, default";
                     }
                     ];
 
@@ -132,7 +132,7 @@
 
                     bindm = $mod, mouse:272, movewindow
                     bindm = $mod, mouse:273, resizewindow
-                ''
+                '';
             };
         };
     };
