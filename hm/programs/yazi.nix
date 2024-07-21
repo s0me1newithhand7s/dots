@@ -6,7 +6,7 @@
         yazi = {
             enable = true;
             enableFishIntegration = true;
-            package = with pkgs; [ yazi ];
+            package = pkgs.yazi;
             settings = {
                 manager = {
                     sort_by = "alphabetical";
