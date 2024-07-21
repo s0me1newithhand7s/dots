@@ -35,7 +35,7 @@
 
                 time = {
                     disabled = false;
-                    format = " [\[$time\]]($style) ";
+                    format = " [$time]($style) ";
                     time_format = "%H:%M";
                     utc_time_offset = "local";
                     style = "pale blue";
