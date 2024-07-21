@@ -54,7 +54,7 @@
                         passes = "5";
                         popups = false;
                         special = false;
-                        xray = true
+                        xray = true;
                     };
 
                     animations = [
