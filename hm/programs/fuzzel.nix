@@ -12,7 +12,7 @@
                     layer = "overlay";
                     prompt = "";
                 };
-                color = {
+                colors = {
                     background = "2603048a";
                     text = "e57875ff";
                     border = "cd5254ee";
