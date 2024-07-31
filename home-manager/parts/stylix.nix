@@ -6,7 +6,7 @@
         enable = true;
         autoEnable = true;
         polarity = "dark";
-        image = /home/hand7s/wpp/wallhaven-7po5yv.jpg;
+        image = ../src/wallpaper.png;
         cursor = {
             package = pkgs.apple-cursor;
             name = "Apple Cursor";  
