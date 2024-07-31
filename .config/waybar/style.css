@@ -1,0 +1,40 @@
+* {
+    font-family: Hack Regular;
+    font-size: 12px;
+    color: rgba(229, 120, 117, 1);
+    padding: 2px;
+    
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.0);
+}
+
+
+.modules-right {
+    background: rgba(38, 3, 4, 0.8);
+    margin: 18px 0px 18px 18px;
+    border: 2px solid rgba(166, 27, 38, 0.8);
+    border-radius: 10px;   
+}
+
+.modules-center {
+    background: rgba(38, 3, 4, 0.75);
+    margin: 18px 0px 18px 18px;
+    border: 2px solid rgba(166, 27, 38, 0.85);
+    border-radius: 10px;   
+}
+
+.modules-left {
+    background: rgba(38, 3, 4, 0.7);
+    margin: 18px 0px 18px 18px;
+    border: 2px solid rgba(205, 82, 84, 0.85);
+    border-radius: 10px;   
+}
+
+#custom-logo {
+    background-image: url("../src/icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+}
