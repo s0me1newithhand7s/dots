@@ -6,10 +6,10 @@
         enable = true;
         autoEnable = true;
         polarity = "dark";
-        image = ../src/wallpaper.png;
+        image = ../../src/wallpaper.jpg;
         cursor = {
-            package = pkgs.apple-cursor;
-            name = "Apple Cursor";  
+            package = pkgs.vanilla-dmz;
+            name = "Vanilla-DMZ";  
         };
         fonts = {
             emoji = {

@@ -13,7 +13,7 @@
                 background = [
                 {
                     monitor = "";
-                    path = "../src/wallpaper.jpg";
+                    path = "/home/hand7s/flake/hand7s/hm/src/wallpaper.jpg";
                     color = "rgba(166, 27, 38, 0.65)";
                     blur_passes = 1;
                     blur_size = 5;

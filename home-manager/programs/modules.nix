@@ -14,5 +14,8 @@
         ./waybar.nix
         ./yazi.nix
         ./zoxide.nix
+        ./ncmpcpp.nix
+        ./vsc.nix
+        ./ags.nix
     ];
 }

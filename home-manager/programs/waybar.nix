@@ -27,7 +27,8 @@
                         "custom/gate-top" 
                         "hyprland/language" 
                         "custom/gate-middle" 
-                        "pulseaudio" 
+                        "pulseaudio"
+                        #"battery"
                         "custom/gate-middle" 
                         "tray" 
                         "custom/gate-bottom" 
@@ -46,7 +47,7 @@
                             "8" = "〨";
                             "9" = "〩";
                             "10" = "〸";
-                            "urgent" = "〒";
+                            "urgent" = "⚠️";
                         };
                         on-scroll-up = "hyprctl dispatch workspace e+1";
                         on-scroll-down = "hyprctl dispatch workspace e-1";
@@ -60,16 +61,19 @@
                     };
 
                     "clock" = {
-                        format = "{:%H ╎ %M}";
+                        format = "{:%H - %M}";
                         rotate = 90;
                         tooltip = true;
-                        tooltip-format = "<big>{:%Y %B \t   week: %V }</big>\n<tt>{calendar}</tt>";
-                        on-click = "foot -F nix run nixpkgs#tty-clock -- -sbcrC 1 &";
+                        tooltip-format = "<big>{:%Y %B %d\t   week: %V }</big>\n<tt>{calendar}</tt>";
+                        on-click = "foot -F tty-clock -sbcrC 1 &";
                     };
 
                     "pulseaudio" = {
-                        format = "{volume}%";
-                        on-click = "nix run nixpkgs#pwvucontrol";
+                        rotate = 90;
+                        on-click = "pwvucontrol";
+                        on-click-right = "pamixer -t";
+                        format = "{volume}% 󰕾";
+                        format-muted = "Mute! 󰖁";
                     };
                     
                     "tray" = {
@@ -104,7 +108,6 @@
                         format-icons = {
                             "Paused" = "⏸️";
                             "Playing" = "▶️";
-                            "Stopped" = "⏹️";
                         };
                         escapce = true;
                         return-type = "json";
@@ -123,6 +126,7 @@
                     font-size: 12px;
                     color: rgba(229, 120, 117, 1);
                     padding: 2px;
+                    
     
                 }
 
@@ -152,7 +156,7 @@
                 }
 
                 #custom-logo {
-                    background-image: url("/etc/nixos/hand7s/hm/src/icon.png");
+                    background-image: url("/home/hand7s/flake/hand7s/src/icon.png");
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: contain; 

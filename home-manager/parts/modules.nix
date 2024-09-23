@@ -1,5 +1,5 @@
 {
     imports = [
-        ./stylix.nix
+        ./chaotic.nix
     ];
 }

@@ -7,9 +7,9 @@
             settings = {
                 logo = {
                     type = "sixel";
-                    source = "/etc/nixos/hand7s/hm/src/avatar.jpg";
-                    width = 32;
-                    height = 16;
+                    source = "/home/hand7s/flake/hand7s/hm/src/avatar.jpg";
+                    width = 30;
+                    height = 15;
                     padding = {
                         top = 1;
                         right = 1;
