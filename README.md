@@ -20,7 +20,7 @@
   | 🚀 | Fish | friendly interactive shell, works fine and fast |
   | 🚀 | Bat | rusty cat with features! |
   | 🚀 | Eza | ls but rusty with SO many features and tree |
-  | 🚀 | Bottem | top but rusty! |
+  | 🚀 | Bottom | top but rusty! |
   | 🚀 | Ripgrep | rust + grep |
   | 🚀 | Tokei | Counter of code lines, but on rust |
   | 🚀 | Procs | `ps aux` but much better |
