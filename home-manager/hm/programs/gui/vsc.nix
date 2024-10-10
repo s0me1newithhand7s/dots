@@ -18,7 +18,6 @@
                 "workbench.activityBar.location" = lib.mkForce "top";
                 "workbench.editor.editorActionsLocation" = lib.mkForce "titleBar";
                 "workbench.editor.showTabs" = lib.mkForce "none";
-                
             };
         };
     };

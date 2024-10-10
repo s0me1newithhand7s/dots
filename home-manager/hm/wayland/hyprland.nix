@@ -54,18 +54,17 @@
                     };
                 };
                 extraConfig = ''
-                    # $mon1 = LVDS-1, 1366x768@60.00Hz, 0x0, 1
-                    $mon1 = DP-1, 2560x1440@165.00Hz, 0x0, 1
+                    $mon_tp = LVDS-1, 1366x768@60.00Hz, 0x0, 1
+                    $mon_ds = DP-1, 2560x1440@165.00Hz, 0x0, 1
+                    $mon_a = monitor = , preferred, auto, 1
                     
                     $term = foot
                     $menu = fuzzel
                     $grim = grimblast --notify --freeze copysave area /home/hand7s/Pictures/screenshots/$(date '+%y%m%d_%H-%M-%s').png
-                    $vertrot = hyprctl keyword monitor $mon1, transform, 1
-                    $horirot = hyprctl keyword monitor $mon1, transform, 0
                     $mod = ALT
                     $lock = hyprlock
 
-                    monitor = $mon1
+                    monitor = $mon_ds
 
                     exec-once = hyprpaper
                     exec-once = waybar 
@@ -81,8 +80,6 @@
                     bind = $mod SHIFT, S, exec, $grim
                     bind = $mod, F, fullscreen
                     bind = $mod, L, exec, $lock
-                    bind = $mod, R, exec, $vertrot
-                    bind = $mod SHIFT, R, exec, $horirot
 
                     bindl = , XF86AudioPlay, exec, playerctl play-pause
                     bindl = , XF86AudioPrev, exec, playerctl previous
@@ -134,14 +131,14 @@
                     animations {
                         enabled = true
 
-                         bezier = bez, 0.05, 0.9, 0.1, 1.05
+                        bezier = bez, 0.05, 0.9, 0.1, 1.05
                         
-                         animation = windows, 1, 7, bez
-                         animation = windowsOut, 1, 7, default, popin 80%
-                         animation = border, 1, 10, default
-                         animation = borderangle, 1, 10, default
-                         animation = fade, 1, 7, default
-                         animation = workspaces, 1, 7, default
+                        animation = windows, 1, 7, bez
+                        animation = windowsOut, 1, 7, default, popin 80%
+                        animation = border, 1, 10, default
+                        animation = borderangle, 1, 10, default
+                        animation = fade, 1, 7, default
+                        animation = workspaces, 1, 7, default
                     }
                 '';
             };

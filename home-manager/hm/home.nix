@@ -25,6 +25,7 @@
         };
         packages = with pkgs; [
             # unsorted
+            k3d
             dconf
             vanilla-dmz
             
@@ -40,6 +41,7 @@
             element-desktop
             iwgtk
             obsidian
+            heroic
             
             # rustybox
             sd
@@ -69,7 +71,12 @@
             profanity
             
             # fonts
-            (nerdfonts.override {fonts = ["Iosevka"];})
+            (nerdfonts.override { 
+                fonts = [
+                    "Iosevka"
+                    ];
+                }
+            )
             hack-font
         ];
         keyboard = {

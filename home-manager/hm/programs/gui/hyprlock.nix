@@ -1,4 +1,5 @@
 {
+    config,
     ...
 }: {
     programs = {
@@ -27,7 +28,7 @@
                     monitor = "";
                     text = "$TIME";
                     text_align = "center";
-                    color = "rgba(229, 120, 117, 1)";
+                    color = "config.lib.stylix.colors.base01";
                     font_size = 48;
                     font_family = "Hack Regular";
                     rotate = 0;
