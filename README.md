@@ -3,7 +3,7 @@
 </div>
 <hr/>
 <div class="body">
-  <p> Dotfiles, classic way and Nix way. Choose whatever you want to use. (wallpapers not included, another repo in process) </p>
+  <p> Dotfiles, classic way and Nix way. Choose whatever you want to use. (wallpapers not included, another repo will be created) </p>
   <p> To fully reproduce my OS you'll need: </p>
 
   | Icon | Name | Description|  
