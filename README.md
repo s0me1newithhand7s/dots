@@ -30,6 +30,6 @@
   and much more in `home.nix`. 
 </div>
 <hr/>
-<div class="ending">
-  <p> I'll upload screenshots asap. Any issues will be listened. </p>
-</div>
+
+
+![image](https://github.com/user-attachments/assets/d023a8f3-7b88-4aff-90e1-b3597c9688cf)
