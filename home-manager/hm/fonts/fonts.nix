@@ -1,9 +1,0 @@
-{
-    ...
-}: {
-    fonts = {
-        fontconfig = {
-            enable = true;
-        };
-    };
-}
