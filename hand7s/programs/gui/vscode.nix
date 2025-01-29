@@ -16,7 +16,7 @@
                 "editor.fontFamily" = "'Hack Regular'";
                 "editor.fontSize" = 16;
 
-                "workbench.colorTheme" = "Red One";
+                "workbench.colorTheme" = "Blazing Red";
                 "workbench.sideBar.location" = "right";
                 "workbench.activityBar.location" = "top";
                 "workbench.editor.editorActionsLocation" = "titleBar";

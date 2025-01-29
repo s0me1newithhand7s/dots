@@ -100,10 +100,9 @@
                     monitor = $mon_ds
 
                     exec-once = hyprpaper
-                    exec-once = waybar 
+                    exec-once = hyprpanel 
                     exec-once = hypridle -q
-                    exec-once = systemctl --user start hyprpolkitagent
-                    exec-once = hyprctl setcursor Whitesur-cursors 18
+                    exec-once = systemctl --user start polkit-soteria
 
                     exec-once = [workspace 1] vesktop
                     exec-once = [workspace 1] ayugram-desktop 

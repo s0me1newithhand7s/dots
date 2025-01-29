@@ -1,4 +1,5 @@
 {
+    pkgs,
     ...
 }: {
     programs = {
@@ -6,24 +7,28 @@
             hyprland = {
                 enable = true;
             };
+
             overwrite = {
                 enable = true;
             };
+
             systemd = {
                 enable = true;
             };
 
             layout = {
                 "bar.layouts" = {
-                    "0" = {
+                    "*" = {
                         left = [ 
                             "dashboard" 
-                            "workspaces" 
+                            "workspaces"
+                            "media"
                         ];
                         middle = [ 
-                            "media" 
+                            "clock" 
                         ];
-                        right = [ 
+                        right = [
+                            "kbinput"
                             "volume" 
                             "systray" 
                             "notifications" 
@@ -33,24 +38,60 @@
             };
 
             settings = {
-                bar.launcher.autoDetectIcon = true;
-                bar.workspaces.show_icons = true;
+                scalingPriority = "hyprland";
 
-                menus.clock = {
-                    time = {
-                        military = true;
-                        hideSeconds = true;
+                tear = false;
+                terminal = "$TERM";
+                dummy = true;
+
+                bar = {
+                    autoHide = "never";
+                    launcher = {
+                        autoDetectIcon = true;
+                    };
+                    workspaces = {
+                        show_icons = true;
+                        workspaces = 10;
+                    };
+                };
+
+                menus = {
+                    clock = {
+                        time = {
+                            military = true;
+                            hideSeconds = true;
+                        };
+                        weather = {
+                            enabled = true;
+                            location = "Yelabuga";
+                            unit = "metric";
+                        };
                     };
 
-                    weather.unit = "metric";
+                    dashboard = {
+                        directories = {
+                            enabled = false;
+                        };
+                    };
                 };
-                menus.dashboard.directories.enabled = false;
-                menus.dashboard.stats.enable_gpu = true;
 
-                theme.bar.transparent = true;
-                theme.font = {
-                    name = "CaskaydiaCove NF";
-                    size = "16px";
+                theme = {
+                    bar = {
+                        transparent = false;
+                        floating = true;
+                        outer_spacing = "1.3em";
+                    };
+
+                    font = {
+                        name = "Hack Font";
+                        size = "16px";
+                    };
+                };
+
+                wallpaper = {
+                    enable = true;
+                    image = "/home/hand7s/flake/hand7s/stylix/wallpaper.jpg";
+                    pywal = false;
                 };
             };
         };

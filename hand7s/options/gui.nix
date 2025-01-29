@@ -21,8 +21,9 @@ in {
             type = lib.types.enum [
                 "River"
                 "Hyprland"
+                "None"
             ];
-            default = "Hyprland";
+            default = "None";
             description = ''
                 Because of both Hyprland and river existance in home
                 manager config this options is provided. This options is
@@ -34,12 +35,9 @@ in {
 
     config = lib.mkIf cfg.enable {
         home.packages = with pkgs; [
-            # gui
             vesktop
             obs-studio
-            hyprpolkitagent
-            inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
-            prismlauncher
+            inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop 
             tetrio-desktop
             element-desktop
             iwgtk
@@ -48,6 +46,7 @@ in {
             easyeffects
             inputs.freesm.packages.${pkgs.system}.freesmlauncher
             netbird-ui
+            hyprpanel
         ];
 
         programs = with lib.mkDefault; {
@@ -55,8 +54,8 @@ in {
             foot.enable = true;
             fuzzel.enable = true;
             hyprlock.enable = true;
-            # hyprpanelenable = true;       # not in this iteration
-            spicetify.enable = true;
+            hyprpanel.enable = true;  
+            # spicetify.enable = true;
             vscode.enable =  true;
             waybar.enable = true;
             wlogout.enable = true;
@@ -65,7 +64,7 @@ in {
         services = with lib.mkDefault; {
             hypridle.enable = true;
             hyprpaper.enable = true;
-            swaync.enable = true;
+            swaync.enable = false;
         };
     };
 

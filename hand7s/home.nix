@@ -1,4 +1,5 @@
 {
+    config,
     pkgs,
     lib,
     ...
@@ -35,12 +36,11 @@
         ./programs/gui/foot.nix
         ./programs/gui/hyprlock.nix
         ./programs/gui/hyprpanel.nix
-        ./programs/gui/spicetify.nix
+        # ./programs/gui/spicetify.nix
         ./programs/gui/vscode.nix
         ./programs/gui/waybar.nix
         ./programs/gui/wlogout.nix
     ];
-
     home = {
         username = "hand7s";
         homeDirectory = "/home/hand7s/";
@@ -51,12 +51,17 @@
                 builtins.getEnv "HOSTNAME" == "s0mePC-nix" || builtins.getEnv "HOSTNAME" == "s0melapt0p-nix"
             ) true;
 
+
             sessionType = if (
                 builtins.getEnv "HOSTNAME" == "s0mePC-nix"
             ) then (
                 "Hyprland"
-            ) else (
+            ) else if ( 
+                builtins.getEnv "HOSTNAME" == "s0melapt0p-nix"
+            ) then (
                 "River"
+            ) else (
+                "None"
             );
         };
 
@@ -82,9 +87,6 @@
         };
         
         packages = with pkgs; [
-            # unsorted
-            whitesur-cursors
-            # cli
             gh
             sd
             nvd
