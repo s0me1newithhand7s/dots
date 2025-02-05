@@ -1,5 +1,6 @@
 {
     pkgs,
+    lib,
     ...
 }: {
     programs = {
@@ -13,7 +14,7 @@
             };
 
             systemd = {
-                enable = true;
+                enable = lib.mkDefault true;
             };
 
             layout = {

@@ -40,6 +40,7 @@ in {
             inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop 
             tetrio-desktop
             element-desktop
+            nheko
             iwgtk
             obsidian
             pwvucontrol
@@ -52,13 +53,23 @@ in {
         programs = with lib.mkDefault; {
             chromium.enable = true;
             foot.enable = true;
-            fuzzel.enable = true;
-            hyprlock.enable = true;
-            hyprpanel.enable = true;  
-            # spicetify.enable = true;
+            spicetify.enable = true;
             vscode.enable =  true;
-            waybar.enable = true;
-            wlogout.enable = true;
+            fuzzel.enable = true;
+
+            hyprlock.enable = lib.mkIf (
+                cfg.sessionType == "Hyprland"
+            ) true;
+            hyprpanel.enable = lib.mkIf (
+                cfg.sessionType == "Hyprland"
+            ) true;
+
+            waybar.enable = lib.mkIf (
+                cfg.sessionType == "River"
+            ) true;
+            wlogout.enable = lib.mkIf (
+                cfg.sessionType == "River"
+            ) true;
         };
 
         services = with lib.mkDefault; {

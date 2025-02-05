@@ -89,73 +89,63 @@
                     };
                 };
                 extraConfig = ''
-                    $mon = DP-1, 2560x1440@165.00Hz, 0x0, 1
-                    
                     $term = foot
                     $menu = fuzzel
-                    $grim = grimblast --notify --freeze copysave area /home/hand7s/Pictures/screenshots/$(date '+%y%m%d_%H-%M-%s').png
-                    $mod = ALT
+                    $grim = grimblast --notify copysave area \
+                        /home/hand7s/Pictures/screenshots/$(date '+%y%m%d_%H-%M-%s').png
                     $lock = hyprlock -q
 
-                    monitor = $mon_ds
+                    monitor = DP-1, 2560x1440@165.00Hz, 0x0, 1
 
                     exec-once = hyprpaper
                     exec-once = hyprpanel 
                     exec-once = hypridle -q
                     exec-once = systemctl --user start polkit-soteria
 
-                    exec-once = [workspace 1] vesktop
-                    exec-once = [workspace 1] ayugram-desktop 
-                    exec-once = [workspace 1] element-desktop
-                    exec-once = [workspace 2; fullscreen] google-chrome-stable
-                    exec-once = [workspace 3; fullscreen] steam
-                    exec-once = [workspace 4; fullscreen] code
+                    bind = ALT, return, exec, $term
+                    bind = ALT, Q, killactive, 
+                    bind = ALT, S, exec, $menu
+                    bind = ALT, F, fullscreen
+                    bind = ALT, L, exec, $lock
 
-                    bind = $mod, return, exec, $term
-                    bind = $mod, Q, killactive, 
-                    bind = $mod, S, exec, $menu
-                    bind = $mod, F, fullscreen
-                    bind = $mod, L, exec, $lock
-                    bind = $mod, R, exec, wlogout
-
-                    bind = $mod, left, movefocus, l
-                    bind = $mod, right, movefocus, r
-                    bind = $mod, up, movefocus, u
-                    bind = $mod, down, movefocus, d
+                    bind = ALT, left, movefocus, l
+                    bind = ALT, right, movefocus, r
+                    bind = ALT, up, movefocus, u
+                    bind = ALT, down, movefocus, d
                     
-                    bind = $mod, 1, workspace, 1
-                    bind = $mod, 2, workspace, 2
-                    bind = $mod, 3, workspace, 3
-                    bind = $mod, 4, workspace, 4
-                    bind = $mod, 5, workspace, 5
-                    bind = $mod, 6, workspace, 6
-                    bind = $mod, 7, workspace, 7
-                    bind = $mod, 8, workspace, 8
-                    bind = $mod, 9, workspace, 9
-                    bind = $mod, 0, workspace, 10
-                    bind = $mod, H, togglespecialworkspace, special
+                    bind = ALT, 1, workspace, 1
+                    bind = ALT, 2, workspace, 2
+                    bind = ALT, 3, workspace, 3
+                    bind = ALT, 4, workspace, 4
+                    bind = ALT, 5, workspace, 5
+                    bind = ALT, 6, workspace, 6
+                    bind = ALT, 7, workspace, 7
+                    bind = ALT, 8, workspace, 8
+                    bind = ALT, 9, workspace, 9
+                    bind = ALT, 0, workspace, 10
+                    bind = ALT, H, togglespecialworkspace, special
                     
-                    bind = $mod SHIFT, 1, movetoworkspace, 1
-                    bind = $mod SHIFT, 2, movetoworkspace, 2
-                    bind = $mod SHIFT, 3, movetoworkspace, 3
-                    bind = $mod SHIFT, 4, movetoworkspace, 4
-                    bind = $mod SHIFT, 5, movetoworkspace, 5
-                    bind = $mod SHIFT, 6, movetoworkspace, 6
-                    bind = $mod SHIFT, 7, movetoworkspace, 7
-                    bind = $mod SHIFT, 8, movetoworkspace, 8
-                    bind = $mod SHIFT, 9, movetoworkspace, 9
-                    bind = $mod SHIFT, 0, movetoworkspace, 10
-                    bind = $mod SHIFT, H, movetoworkspace, special
+                    bind = ALT SHIFT, 1, movetoworkspace, 1
+                    bind = ALT SHIFT, 2, movetoworkspace, 2
+                    bind = ALT SHIFT, 3, movetoworkspace, 3
+                    bind = ALT SHIFT, 4, movetoworkspace, 4
+                    bind = ALT SHIFT, 5, movetoworkspace, 5
+                    bind = ALT SHIFT, 6, movetoworkspace, 6
+                    bind = ALT SHIFT, 7, movetoworkspace, 7
+                    bind = ALT SHIFT, 8, movetoworkspace, 8
+                    bind = ALT SHIFT, 9, movetoworkspace, 9
+                    bind = ALT SHIFT, 0, movetoworkspace, 10
+                    bind = ALT SHIFT, H, movetoworkspace, special
 
-                    bind = $mod, mouse_down, workspace, e+1
-                    bind = $mod, mouse_up, workspace, e-1
+                    bind = ALT, mouse_down, workspace, e+1
+                    bind = ALT, mouse_up, workspace, e-1
 
-                    bindm = $mod, mouse:272, movewindow
-                    bindm = $mod, mouse:273, resizewindow
+                    bindm = ALT, mouse:272, movewindow
+                    bindm = ALT, mouse:273, resizewindow
 
-                    bind = $mod SHIFT, E, exit,
-                    bind = $mod SHIFT, space , togglefloating,
-                    bind = $mod SHIFT, S, exec, $grim
+                    bind = ALT SHIFT, E, exit,
+                    bind = ALT SHIFT, space , togglefloating,
+                    bind = ALT SHIFT, S, exec, $grim
                     
                     bindl = , XF86AudioPlay, exec, playerctl play-pause
                     bindl = , XF86AudioPrev, exec, playerctl previous
@@ -183,6 +173,7 @@
                         animation = workspaces, 1, 7, default
                     }
                 '';
+                
                 plugins = with inputs; [
                     # hyprcursor.packages.${pkgs.system}.hypr-dynamic-cursors
                 ];

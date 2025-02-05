@@ -18,7 +18,6 @@
 
         ./services/hypridle.nix
         ./services/hyprpaper.nix
-        ./services/swaync.nix
 
         ./programs/cli/bat.nix
         ./programs/cli/eza.nix
@@ -36,7 +35,7 @@
         ./programs/gui/foot.nix
         ./programs/gui/hyprlock.nix
         ./programs/gui/hyprpanel.nix
-        # ./programs/gui/spicetify.nix
+        ./programs/gui/spicetify.nix
         ./programs/gui/vscode.nix
         ./programs/gui/waybar.nix
         ./programs/gui/wlogout.nix

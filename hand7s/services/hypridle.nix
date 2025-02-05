@@ -6,8 +6,8 @@
             settings = {
                 general = {
                     lock_cmd = "pidof hyprlock || hyprlock";
-                    before_sleep_cmd = "hyprlock";
-                    after_sleep_cmd = "hyprctl dispatch dpms on";
+                    before_sleep_cmd = "hyprpanle -q; hyprlock";
+                    after_sleep_cmd = "hyprctl dispatch dpms on; hyprpanel";
                 };
                 listener = [
                 {
