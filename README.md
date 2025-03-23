@@ -1,4 +1,4 @@
 ```Nix
-throw "Some work is needed here, consider this project as WIP!"
+throw "Some work is needed here, consider this project as WIP! 100"
 ```
-<p align=center><img src=https://github.com/user-attachments/assets/fd9afcc9-230b-4f14-838b-367ae49c7197></p>
+<p align=center><img src=https://github.com/user-attachments/assets/0a99d67f-8dee-45d2-9c4e-62f867ce395f></p>
