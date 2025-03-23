@@ -5,7 +5,7 @@
         bat = {
             enable = true;
             config = {
-                pager = "less";
+                pager = "less -FR";
             };
         };
     };

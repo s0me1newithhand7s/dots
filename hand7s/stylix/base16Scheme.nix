@@ -1,12 +1,7 @@
 {
-    pkgs,
     ...
 }: {
     stylix = {
-        enable = true;
-        autoEnable = true;
-        polarity = "dark";
-        image = ./wallpaper.jpg;
         base16Scheme = {
             base00 = "2a1617";
             base01 = "5d3f3f";
@@ -34,36 +29,6 @@
             base17 = "d8708b";
             scheme = "hand7s";
             name = "red_ish";
-        };
-
-        cursor = {
-            size = 18;
-            name = "whitesur-cursors";
-            package = pkgs.whitesur-cursors;
-        };
-
-        fonts = {
-            sizes = {
-                applications = 10;
-                desktop = 8;
-                popups = 10;
-                terminal = 8;   
-            };
-
-            emoji = {
-                package = pkgs.nerd-fonts.iosevka;
-                name = "Iosevka Nerd Font Mono";
-            };
-
-            sansSerif = {
-                package = pkgs.dejavu_fonts;
-                name = "DejaVu Sans";
-            };
-            
-            serif = {
-                package = pkgs.dejavu_fonts;
-                name = "DejaVu Serif";
-            };
         };
     };
 }

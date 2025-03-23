@@ -1,6 +1,6 @@
 {
-    config,
     inputs,
+    config,
     pkgs,
     lib,
     ...
@@ -11,21 +11,65 @@
                 enable = lib.mkIf (
                     config.home.gui.sessionType == "Hyprland"
                 ) true;
+
                 settings = {
+                    monitor = ", 2560x1440@165.00Hz, 0x0, 1";
+
                     general = {
                         gaps_in = "5";
                         gaps_out = "20";
-                        border_size = 2;
+                        border_size = "2";
                         layout = "dwindle";
+
+                        snap = {
+                            enabled = true;
+                            window_gap = "5";
+                            monitor_gap = "5";
+                            border_overlap = false;
+                        };
                     };
 
                     input = {
                         kb_layout = "us, ru";
-                        kb_options = "grp:caps_toggle,grp_led:scroll";
+                        kb_options = "grp:caps_toggle";
+
                         numlock_by_default = true;
                         follow_mouse = "1";
                         left_handed = true;
                         sensitivity = "0";
+
+                        special_fallthrough = true;
+                        focus_on_close = 1;
+
+                        touchpad = {
+                            disable_while_typing = true;
+                            tap-to-click = true;
+                        };
+
+                        tablet = {
+                            output = "current";
+                            left_handed = true;
+                        };
+                    };
+
+                    gestures = {
+                        workspace_swipe = true;
+                        workspace_swipe_fingers = true;
+                        workspace_swipe_distance = 400;
+                    };
+
+                    group = {
+                        auto_group = true;
+                        insert_after_current = true;
+                        focus_removed_window = true;
+                        drag_into_group = "2";
+                        merge_groups_on_drag = true;
+                        merge_groups_on_groupbar = true;
+                        group_on_movetoworkspace = true;
+
+                        groupbar = {
+                            enabled = true;
+                        };
                     };
 
                     decoration = {
@@ -53,10 +97,118 @@
                         };
                     };
 
+                    exec-once = [
+                        "systemctl --user start hyprpaper.service"
+                        "systemctl --user start hypridle.service"
+                        "systemctl --user start hyprpolkitagent.service"
+                        "systemctl --user start hyprpanel.service"
+                    ];
+
+                    bind = [
+                        "ALT, return, exec, ghostty"
+                        "ALT, Q, killactive,"
+                        "ALT, S, exec, fuzzel"
+                        "ALT, F, fullscreen, 0"
+                        "ALT, L, exec, hyprlock"
+                        "ALT, H, togglespecialworkspace, special"
+
+                        "ALT SHIFT, E, exit,"
+                        "ALT SHIFT, space, togglefloating, active"
+                        "ALT SHIFT, S, exec, grimblast --notify --freeze copysave area /home/hand7s/Pictures/Screenshots/$(date '+%y%m%d_%H-%M-%s').png"
+                        "ALT SHIFT, H, movetoworkspace, special"
+
+                        "ALT, left, movefocus, l"
+                        "ALT, right, movefocus, r"
+                        "ALT, up, movefocus, u"
+                        "ALT, down, movefocus, d"
+
+                        "ALT, 1, workspace, 1"
+                        "ALT, 2, workspace, 2"
+                        "ALT, 3, workspace, 3"
+                        "ALT, 4, workspace, 4"
+                        "ALT, 5, workspace, 5"
+                        "ALT, 6, workspace, 6"
+                        "ALT, 7, workspace, 7"
+                        "ALT, 8, workspace, 8"
+                        "ALT, 9, workspace, 9"
+                        "ALT, 0, workspace, 0"
+
+                        "ALT SHIFT, 1, movetoworkspace, 1"
+                        "ALT SHIFT, 2, movetoworkspace, 2"
+                        "ALT SHIFT, 3, movetoworkspace, 3"
+                        "ALT SHIFT, 4, movetoworkspace, 4"
+                        "ALT SHIFT, 5, movetoworkspace, 5"
+                        "ALT SHIFT, 6, movetoworkspace, 6"
+                        "ALT SHIFT, 7, movetoworkspace, 7"
+                        "ALT SHIFT, 8, movetoworkspace, 8"
+                        "ALT SHIFT, 9, movetoworkspace, 9"
+                        "ALT SHIFT, 0, movetoworkspace, 0"
+                        
+                        "ALT, mouse_down, workspace, e+1"
+                        "ALT, mouse_up, workspace, e-1"
+                    ];
+
+                    bindel = [
+                        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+                        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+
+                        ", XF86MonBrightnessDown, exec, brightness set 5%-"
+                        ", XF86MonBrightnessUp, exec, brightness set +5%"
+                    ];
+                    
+                    bindl = [
+                        ", XF86AudioPlay, exec, playerctl play-pause"
+                        ", XF86AudioPrev, exec, playerctl previous"
+                        ", XF86AudioNext, exec, playerctl next"
+                        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+                        "ALT, TAB, hyprexpo:expo, toggle"
+                    ];
+
+                    bindm = [
+                        "ALT, mouse:272, movewindow"
+                        "ALT, mouse:273, resizewindow"
+                    ];
+
+                    animation = [
+                        "enabled = true"
+
+                        "bezier = bez, 0.05, 0.9, 0.1, 1.05"
+
+                        "animation = windows, 1, 7, bez"
+                        "animation = windowsOut, 1, 7, default, popin 80%"
+                        "animation = border, 1, 10, default"
+                        "animation = borderangle, 1, 10, default"
+                        "animation = fade, 1, 7, default"
+                        "animation = workspaces, 1, 7, default"
+                    ];
+
                     misc = {
                         disable_hyprland_logo = true;
                         disable_splash_rendering = true;
                         middle_click_paste = false;
+                        animate_manual_resizes = true;
+                        animate_mouse_windowdragging = true;
+                        focus_on_activate = true;
+                        close_special_on_empty = true;
+                        initial_workspace_tracking = "2";
+                    };
+
+                    binds = {
+                        workspace_back_and_forth = true;
+                        allow_workspace_cycles = true;
+                        workspace_center_on = true;
+                    };
+
+                    xwayland = {
+                        enabled = true;
+                        use_nearest_neighbor = true;
+                        force_zero_scaling = false;
+                    };
+
+                    ecosystem = {
+                        no_update_news = true;
+                        no_donation_nag = true;
                     };
 
                     debug = {
@@ -64,118 +216,20 @@
                     };
 
                     plugin = {
-                        overview = {
-                            showSpecialWorkspace = true;
-                            exitOnSwitch = true;
-                            switchOnDrop = true;
-                            exitOnClick = true;
-                        };
+                        hyprexpo = {
+                            columns = 3;
+                            gap_size = 5;
 
-                        dynamic-cursors = {
-                            enabled = true;
-                            threshold = 5;
-                            mode = "stretch";
-
-                            stretch = {
-                                limit = 3000;
-                            };
-
-                            shake = {
-                                enabled = true;
-                                nearest = false;
-                                effects = true;
-                            };
+                            enable_gesture = true;
+                            gesture_fingers = 3;
+                            gesture_distance = 300;
+                            gesture_positive = false;
                         };
                     };
                 };
-                extraConfig = ''
-                    $term = foot
-                    $menu = fuzzel
-                    $grim = grimblast --notify copysave area \
-                        /home/hand7s/Pictures/screenshots/$(date '+%y%m%d_%H-%M-%s').png
-                    $lock = hyprlock -q
-
-                    monitor = DP-1, 2560x1440@165.00Hz, 0x0, 1
-
-                    exec-once = hyprpaper
-                    exec-once = hyprpanel 
-                    exec-once = hypridle -q
-                    exec-once = systemctl --user start polkit-soteria
-
-                    bind = ALT, return, exec, $term
-                    bind = ALT, Q, killactive, 
-                    bind = ALT, S, exec, $menu
-                    bind = ALT, F, fullscreen
-                    bind = ALT, L, exec, $lock
-
-                    bind = ALT, left, movefocus, l
-                    bind = ALT, right, movefocus, r
-                    bind = ALT, up, movefocus, u
-                    bind = ALT, down, movefocus, d
-                    
-                    bind = ALT, 1, workspace, 1
-                    bind = ALT, 2, workspace, 2
-                    bind = ALT, 3, workspace, 3
-                    bind = ALT, 4, workspace, 4
-                    bind = ALT, 5, workspace, 5
-                    bind = ALT, 6, workspace, 6
-                    bind = ALT, 7, workspace, 7
-                    bind = ALT, 8, workspace, 8
-                    bind = ALT, 9, workspace, 9
-                    bind = ALT, 0, workspace, 10
-                    bind = ALT, H, togglespecialworkspace, special
-                    
-                    bind = ALT SHIFT, 1, movetoworkspace, 1
-                    bind = ALT SHIFT, 2, movetoworkspace, 2
-                    bind = ALT SHIFT, 3, movetoworkspace, 3
-                    bind = ALT SHIFT, 4, movetoworkspace, 4
-                    bind = ALT SHIFT, 5, movetoworkspace, 5
-                    bind = ALT SHIFT, 6, movetoworkspace, 6
-                    bind = ALT SHIFT, 7, movetoworkspace, 7
-                    bind = ALT SHIFT, 8, movetoworkspace, 8
-                    bind = ALT SHIFT, 9, movetoworkspace, 9
-                    bind = ALT SHIFT, 0, movetoworkspace, 10
-                    bind = ALT SHIFT, H, movetoworkspace, special
-
-                    bind = ALT, mouse_down, workspace, e+1
-                    bind = ALT, mouse_up, workspace, e-1
-
-                    bindm = ALT, mouse:272, movewindow
-                    bindm = ALT, mouse:273, resizewindow
-
-                    bind = ALT SHIFT, E, exit,
-                    bind = ALT SHIFT, space , togglefloating,
-                    bind = ALT SHIFT, S, exec, $grim
-                    
-                    bindl = , XF86AudioPlay, exec, playerctl play-pause
-                    bindl = , XF86AudioPrev, exec, playerctl previous
-                    bindl = , XF86AudioNext, exec, playerctl next
-                    bindl = , XF86AudioStop, exec, playerctl stop
-
-                    bindl = , XF86MonBrightnessUp, exec, brightnessctl s +10%
-                    bindl = , XF86MonBrightnessDown, exec, brightnessctl s 10%-
-
-                    bindl = , XF86AudioRaiseVolume, exec, pamixer -i 10
-                    bindl = , XF86AudioLowerVolume, exec, pamixer -d 10
-                    bindl = , XF86AudioMicMute, exec,  pamixer --default-source -t
-                    bindl = , XF86AudioMute, exec, pamixer -t
-
-                    animations {
-                        enabled = true
-
-                        bezier = bez, 0.05, 0.9, 0.1, 1.05
-                        
-                        animation = windows, 1, 7, bez
-                        animation = windowsOut, 1, 7, default, popin 80%
-                        animation = border, 1, 10, default
-                        animation = borderangle, 1, 10, default
-                        animation = fade, 1, 7, default
-                        animation = workspaces, 1, 7, default
-                    }
-                '';
                 
                 plugins = with inputs; [
-                    # hyprcursor.packages.${pkgs.system}.hypr-dynamic-cursors
+                    inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
                 ];
             };
         };

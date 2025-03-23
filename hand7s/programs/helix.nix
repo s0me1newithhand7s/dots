@@ -24,16 +24,17 @@
                     nixd = {
                         command = "nixd";
                         args = [
-                            "--inlay-hints=true"  
+                            "--inlay-hints=true"
                         ];
                     };
                 };
+                
                 language = [
                     {
                         name = "nix";
                         comment-token = "#";
                         indent = {
-                            tab-width = 2;
+                            tab-width = 4;
                             unit = "  ";    
                         };
                         

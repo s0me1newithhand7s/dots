@@ -6,7 +6,7 @@
             enable = true;
             enableFishIntegration = true;
             git = true;
-            icons = "auto";
+            icons = "always";
         };
     };
 }

@@ -1,0 +1,11 @@
+{
+    ...
+}: {
+    programs = {
+        yambar = {
+            settings = {
+                
+            };
+        };
+    };
+}

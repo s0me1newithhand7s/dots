@@ -19,6 +19,7 @@ in {
 
         sessionType = lib.mkOption {
             type = lib.types.enum [
+                "Sway"
                 "River"
                 "Hyprland"
                 "None"
@@ -29,6 +30,8 @@ in {
                 manager config this options is provided. This options is
                 depending on hostname. To bypass it, either delete expression 
                 in `home.nix`, or change hostname to yours.
+                Also, you can add any other desktop type here, just use
+                it after this properly.
             '';
         };
     };
@@ -36,11 +39,13 @@ in {
     config = lib.mkIf cfg.enable {
         home.packages = with pkgs; [
             vesktop
-            obs-studio
+            (discord.override {
+                withVencord = true;
+                withOpenASAR = false;
+            })
             inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop 
             tetrio-desktop
             element-desktop
-            nheko
             iwgtk
             obsidian
             pwvucontrol
@@ -48,34 +53,36 @@ in {
             inputs.freesm.packages.${pkgs.system}.freesmlauncher
             netbird-ui
             hyprpanel
+            hyprpolkitagent
+            hyprsysteminfo
+            parsec-bin
+            hyprpicker
+            bitwarden
+            autotiling-rs
+            sway-audio-idle-inhibit
+            mindustry
+            grimblast
+            sway-contrib.grimshot
+            sway-contrib.inactive-windows-transparency
+            playerctl
+            lan-mouse
+            brightnessctl
+            wayshot
         ];
 
-        programs = with lib.mkDefault; {
+        programs = {
             chromium.enable = true;
-            foot.enable = true;
+            firefox.enable = true;
             spicetify.enable = true;
             vscode.enable =  true;
             fuzzel.enable = true;
-
-            hyprlock.enable = lib.mkIf (
-                cfg.sessionType == "Hyprland"
-            ) true;
-            hyprpanel.enable = lib.mkIf (
-                cfg.sessionType == "Hyprland"
-            ) true;
-
-            waybar.enable = lib.mkIf (
-                cfg.sessionType == "River"
-            ) true;
-            wlogout.enable = lib.mkIf (
-                cfg.sessionType == "River"
-            ) true;
+            ghostty.enable = true;
+            yambar.enable = true;
         };
 
         services = with lib.mkDefault; {
             hypridle.enable = true;
             hyprpaper.enable = true;
-            swaync.enable = false;
         };
     };
 
